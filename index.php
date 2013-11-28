@@ -11,27 +11,27 @@
 
 <link rel="shortcut icon" href="favicon.ico" />
 <link href="ja.css" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" href="/libs/fancybox2/jquery.fancybox.css" media="screen" />
-<link rel="stylesheet" href="/libs/fancybox2/helpers/jquery.fancybox-thumbs.css" type="text/css" media="screen" />
-<link rel="stylesheet" type="text/css" href="/libs/fontawesome/css/font-awesome.css" />
+<link rel="stylesheet" href="libs/fancybox2/jquery.fancybox.css" media="screen" />
+<link rel="stylesheet" href="libs/fancybox2/helpers/jquery.fancybox-thumbs.css" type="text/css" media="screen" />
+<link rel="stylesheet" type="text/css" href="libs/fontawesome/css/font-awesome.css" />
 
 <!-- JQuery -->
-<!-- <script src="/libs/jquery/jquery.min.js" type="text/javascript"></script> -->
+<!-- <script src="libs/jquery/jquery.min.js" type="text/javascript"></script> -->
 <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 <!-- jquery.animate-enhanced plugin -->
-<script src="/libs/jquery/jquery.animate-enhanced.min.js" type="text/javascript"></script>
+<script src="libs/jquery/jquery.animate-enhanced.min.js" type="text/javascript"></script>
 <!-- Fancybox -->
-<script type="text/javascript" src="/libs/fancybox2/jquery.fancybox.pack.js"></script>
+<script type="text/javascript" src="libs/fancybox2/jquery.fancybox.pack.js"></script>
 <!-- Optionally add button and/or thumbnail helpers -->
 <!-- <script type="text/javascript" src="fancybox2/helpers/jquery.fancybox-buttons.js"></script> -->
-<script type="text/javascript" src="/libs/fancybox2/helpers/jquery.fancybox-thumbs.js"></script>
+<script type="text/javascript" src="libs/fancybox2/helpers/jquery.fancybox-thumbs.js"></script>
 <!-- jflickrfeed -->
-<script type="text/javascript" src="/libs/jflickrfeed/jflickrfeed.min.js"></script>
+<script type="text/javascript" src="libs/jflickrfeed/jflickrfeed.min.js"></script>
 <!-- Slider -->
-<script type="text/javascript" src="/libs/slidesjs/jquery.slides.min.js"></script>
+<script type="text/javascript" src="libs/slidesjs/jquery.slides.min.js"></script>
 <script src="ja.js" type="text/javascript"></script>
 
-<?
+<?php
 
 echo '
 <script type="text/javascript">

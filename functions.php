@@ -110,11 +110,15 @@
 	}
 
 	function getRandomImageFromFolder($dir) {
+
+		if ( file_exists($dir) ) {
+
+			$images = glob($dir . '*.{jpg,jpeg,png,gif}', GLOB_BRACE);
 		
-		$images = glob($dir . '*.{jpg,jpeg,png,gif}', GLOB_BRACE);
-		
-		$randomImage = $images[array_rand($images)]; // See comments
-		return("/w2/" . $randomImage);
+			$randomImage = $images[array_rand($images)]; // See comments
+			return("/w2/" . $randomImage);
+		}
+		return "";
 	}
 
 ?>

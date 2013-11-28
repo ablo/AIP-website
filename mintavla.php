@@ -15,6 +15,7 @@
 	</div>
 </div>
 
+<!-- 
 <div id="tavla" class="simpleCart_shelfItem">
 	<div id="ram">
 		<div id="passepartout">
@@ -30,10 +31,10 @@
 		<a href="javascript:;" class="blackbutton item_add"><i class="fa fa-shopping-cart"></i>&nbsp;&nbsp;Lägg i kundvagn</a>
 	</div>
 </div>
+ -->
 
 <div class="menuarrow"><i id="tavlaarrow" class="fa fa-caret-up"></i></div>
 
-<script type="text/javascript" src="/libs/simplecart/simpleCart.min.js"></script>
 <script type="text/javascript">
 
 	$(document).ready(function() {
