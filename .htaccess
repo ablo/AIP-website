@@ -1,0 +1,18 @@
+RewriteEngine On
+
+RewriteRule ^favicon\.ico$ /images/favicon.ico [L]
+RewriteRule ^s/([^/]+)$ timthumb.php?src=gallery/_SLIDE/$1&w=980&h=525&zc=1&q=100&a=c
+RewriteRule ^gt/([^/]+)/([^/]+)$ timthumb.php?src=/gallery/$1/$2&w=277&h=205&zc=1&q=100
+RewriteRule ^lightbox/([^/]+)/([^/]+)$ /showimage.php?img=gallery/$1/$2
+header add "disablevcache" "true"
+
+# compress text, html, javascript, css:
+AddOutputFilterByType DEFLATE text/plain
+AddOutputFilterByType DEFLATE text/html
+AddOutputFilterByType DEFLATE text/css
+AddOutputFilterByType DEFLATE application/javascript
+AddOutputFilterByType DEFLATE application/x-javascript
+
+<FilesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|js|css|swf)$">
+Header set Cache-Control "max-age=604800, public"
+</FilesMatch>

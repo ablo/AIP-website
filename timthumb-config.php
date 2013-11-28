@@ -1,4 +1,4 @@
-<?
+<?php
 
 	$ALLOWED_SITES = array (
 		'flickr.com',

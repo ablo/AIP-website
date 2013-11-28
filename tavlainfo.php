@@ -7,5 +7,5 @@
 </div>
 
 <div id="newsImageContainerRight" class="exclusive_news">
-	<img src="../gallery/timthumb.php?src=<? echo getRandomImageFromFolder('gallery/_SLIDE/');?>&amp;w=435&amp;h=165&amp;zc=1&amp;q=100" width="435" height="165" alt="" style="display:none;" onload="$(this).fadeIn();" />
+	<img src="timthumb.php?src=<?php echo getRandomImageFromFolder('gallery/_SLIDE/');?>&amp;w=435&amp;h=165&amp;zc=1&amp;q=100" width="435" height="165" alt="" style="display:none;" onload="$(this).fadeIn();" />
 </div>

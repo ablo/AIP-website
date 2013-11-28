@@ -236,7 +236,7 @@ $(document).ready(function() {
 // 		});
 // 	},3000);
 
-	$("#" + currentPage).click();
+// 	$("#" + currentPage).click();
 
 // 	$(".box").hover(function() {
 // 		$(this).children(".plusbutton").fadeToggle();

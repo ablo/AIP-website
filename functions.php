@@ -48,7 +48,7 @@
 			foreach($sortFiles as $file) {
 					$filepath = $albumdir . "/" . $file;
 					if ( filetype($filepath) == "file" && $file != "." && $file != ".." ) {
-// 						$imglarge = 'gallery/timthumb.php?src=' . urlencode($filepath) . '&amp;h=1200&amp;zc=1&amp;q=100';
+// 						$imglarge = 'timthumb.php?src=' . urlencode($filepath) . '&amp;h=1200&amp;zc=1&amp;q=100';
 						$imglarge = $filepath; // DO I NEED timthumb HERE?
 						// Get IPTC description...
 						$head_iptc = output_iptc_data($filepath,"2#105");
@@ -56,8 +56,8 @@
 						$title = $head_iptc . ($desc_iptc ? '<small>&nbsp;&nbsp;<!--<i class=\'fa fa-picture fa-lg\'></i>-->-&nbsp;&nbsp;' . $desc_iptc . '</small>' : '');
 
 						$albumClass = ($index == 0 ? "album" : "hidden");
-// 						$imgthumb = 'gallery/timthumb.php?src=' . $filepath . '&amp;w=277&amp;h=205&amp;zc=1&amp;q=100';
-						$imgthumb = '/gt/' . $dirname . '/' . $file;
+// 						$imgthumb = 'timthumb.php?src=' . $filepath . '&amp;w=277&amp;h=205&amp;zc=1&amp;q=100';
+						$imgthumb = 'gt/' . $dirname . '/' . $file;
 
 						echo '<a class="' . $albumClass . ' gallery_image" href="' . $imglarge . '" rel="' . $dirname . '" caption="' . $title . '" image="' . $filepath . '" data-artnr="' . substr($file,4,-4) . '">
 						<img src="' . $imgthumb . '" alt="" width="277" height="205" />
@@ -88,8 +88,8 @@
 			foreach($sortFiles as $file) {
 					$filepath = $albumdir . "/" . $file;
 					if ( filetype($filepath) == "file" && $file != "." && $file != ".." ) {
-// 						$imglarge = 'gallery/timthumb.php?src=' . urlencode($filepath) . '&amp;zc=1&amp;q=100';
-// 						$imgslide = 'gallery/timthumb.php?src=' . urlencode($filepath) . '&amp;w=980&amp;h=525&amp;zc=1&amp;q=100&amp;a=c';
+// 						$imglarge = 'timthumb.php?src=' . urlencode($filepath) . '&amp;zc=1&amp;q=100';
+// 						$imgslide = 'timthumb.php?src=' . urlencode($filepath) . '&amp;w=980&amp;h=525&amp;zc=1&amp;q=100&amp;a=c';
 // 						$imgslide = '/s/' . $file;
 						// Get IPTC description...
 						$head_iptc = output_iptc_data($filepath,"2#105");
@@ -99,7 +99,7 @@
 // 						}
 
 // 						echo '<img src="' . $imgslide . '" alt="" />';
-						echo '<img src="/w2/gallery/_SLIDE/' . $file . '" width="980" height="525" alt="" />';
+						echo '<img src="gallery/_SLIDE/' . $file . '" width="980" height="525" alt="" />';
 						$index++;
 						if ( $index == $maxfiles ) {
 							break;
@@ -116,7 +116,7 @@
 			$images = glob($dir . '*.{jpg,jpeg,png,gif}', GLOB_BRACE);
 		
 			$randomImage = $images[array_rand($images)]; // See comments
-			return("/w2/" . $randomImage);
+			return($randomImage);
 		}
 		return "";
 	}

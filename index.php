@@ -29,15 +29,18 @@
 <script type="text/javascript" src="libs/jflickrfeed/jflickrfeed.min.js"></script>
 <!-- Slider -->
 <script type="text/javascript" src="libs/slidesjs/jquery.slides.min.js"></script>
+<!-- Simple Cart -->
+<script type="text/javascript" src="libs/simplecart/simpleCart.min.js"></script>
+
 <script src="ja.js" type="text/javascript"></script>
 
 <?php
 
-echo '
-<script type="text/javascript">
-	var currentPage = "' . $_GET["page"] . '";
-</script>
-';
+// echo '
+// <script type="text/javascript">
+// 	var currentPage = "' . $_GET["page"] . '";
+// </script>
+// ';
 
 ?>
 
