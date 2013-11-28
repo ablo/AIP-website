@@ -15,6 +15,37 @@
 	</div>
 </div>
 
+<div id="tavlaprivat" class="textContainerLeft box">
+	<h4>Tavla på väggen, ett minne för livet</h4>
+	<h2>Köp förstoringar</h2>
+	<p>
+		När du tittar runt på mina bilder under "TITTA BILDER" så kan du klicka på "KÖP FÖRSTORING". 
+		Bilden läggs då i kundvagnen. När du är färdig så kan du beställa förstoringar. "Gå till kassa" tar dig till PayPal<span style="font-family:helvetica;">&trade;</span> som 
+		på ett säkert sätt hanterar din betalning. Du kan betala med kort eller via ditt PayPal<span style="font-family:helvetica;">&trade;</span> konto.
+	</p>
+	<br />
+	<p>
+		Vissa bilder kan du inte beställa. Detta beror på att de är bundna till ett specifikt uppdrag och endast kunden kan beställa förstoringar på dessa bilder.
+	</p>
+	<br />
+	<a class="blackbutton" onclick="$('#gallery').click();">Titta på bilder och beställ</a>
+</div>
+
+<div id="tavlaforetag" class="textContainerRight box">
+	<h4>Mina bilder på ert företag</h4>
+	<h2>Jag fixar helheten</h2>
+	<p>
+		Idén är ganska enkel! Jag kommer ut till er och titta vilken typ av tavlor som passar i er lokal.
+		Jag levererar sedan färdiga tavlor som jag personligen kommer och hänger upp hos er.
+		Det ger ett otroligt proffsigt intryck och ger dessutom en enorm mysfaktor. ;)
+		
+		Ni kan också välja att kombinera detta med en fotografering av t ex. personal i lokal för att få det personligt.
+	</p>
+	<br />
+	<a class="blackbutton" onclick="$('#contact').click();">Kontakta mig så berättar jag mer</a>
+</div>
+
+
 <!-- 
 <div id="tavla" class="simpleCart_shelfItem">
 	<div id="ram">
