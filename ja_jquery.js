@@ -73,10 +73,10 @@ var carouselSettings = {
 		'speedOut'		:	200,
 		'index'			: 	true,
 		'overlayShow'	:	true,
-		openEffect  : 'elastic',
-		closeEffect : 'elastic',
-		prevEffect : 'elastic',
-		nextEffect : 'elastic',
+		openEffect  : 'fade',
+		closeEffect : 'fade',
+		prevEffect : 'fade',
+		nextEffect : 'fade',
 		padding: 10,
 		closeBtn: false,
 		helpers	: {
@@ -84,7 +84,7 @@ var carouselSettings = {
 				opacity : 1,
 				css : {
 					'background-color' : '#2D2E2F',
-					'background' : 'url(/images/ios-linen.jpg)'
+					'background' : 'url(images/iosbg.jpg)'
 				}
 			},
 			thumbs	: {
@@ -218,7 +218,7 @@ $(document).ready(function() {
 				opacity : 1,
 				css : {
 					'background-color' : '#2D2E2F',
-					'background' : 'url(/images/ios-linen.jpg)'
+					'background' : 'url(images/iosbg.jpg)'
 				}
 			}
 		}
