@@ -198,9 +198,16 @@ $(document).ready(function() {
 // 	});
 	$(".gallery_image").fancybox(carouselSettings);
 	$(".album").hover(function() {
-		$(this).children(".gName").toggleClass("hover");
-		$(this).toggleClass("hover");
-		$(this).children(".mask").fadeToggle("fast");
+		$(this).children(".gName").addClass("hover");
+		$(this).addClass("hover");
+// 		$(this).children(".mask").fadeIn("fast");
+		$(this).children(".mask").fadeTo("fast",0.8);
+
+	}, function() {
+		$(this).children(".gName").removeClass("hover");
+		$(this).removeClass("hover");
+// 		$(this).children(".mask").fadeOut("fast");
+		$(this).children(".mask").fadeTo("fast",0);
 
 	});
 

@@ -25,7 +25,7 @@
 				$c = count ($iptc[$s]);
 				for ($i=0; $i <$c; $i++) {
 					if ( $s == $field ) {
-						return(utf8_encode($iptc[$s][$i]));
+						return($iptc[$s][$i]);
 					}
 				}
 			}
@@ -47,7 +47,7 @@
 			$index = 0;
 			foreach($sortFiles as $file) {
 					$filepath = $albumdir . "/" . $file;
-					if ( filetype($filepath) == "file" && $file != "." && $file != ".." ) {
+					if ( filetype($filepath) == "file" && $file != "." && $file != ".." && $file != ".shop" ) {
 // 						$imglarge = 'timthumb.php?src=' . urlencode($filepath) . '&amp;h=1200&amp;zc=1&amp;q=100';
 						$imglarge = $filepath; // DO I NEED timthumb HERE?
 						// Get IPTC description...
@@ -59,11 +59,19 @@
 // 						$imgthumb = 'timthumb.php?src=' . $filepath . '&amp;w=277&amp;h=205&amp;zc=1&amp;q=100';
 						$imgthumb = 'gt/' . $dirname . '/' . $file;
 
-						echo '<a class="' . $albumClass . ' gallery_image" href="' . $imglarge . '" rel="' . $dirname . '" caption="' . $title . '" image="' . $filepath . '" data-artnr="' . substr($file,4,-4) . '">
-						<img src="' . $imgthumb . '" alt="" width="277" height="205" />
-						<div class="gName">' . makeHTMLStr( substr($dirname,2) ) . '</div>
-						<div class="mask"><i class="fa fa-camera"></i>' . makeHTMLStr( substr($dirname,2) ) . '<small>' . $head_iptc . '</small></div>
-					</a>
+						$shopAlbumClass = "";
+						$maskIcon = "fa fa-camera";
+						if ( file_exists($albumdir . "/.shop") ) {
+							// If .shop exists we handle this as a shop album
+							$shopAlbumClass = " shop";
+							$maskIcon = "fa fa-shopping-cart";
+						}
+
+						echo '
+						<a class="' . $albumClass . $shopAlbumClass . ' gallery_image" href="' . $imglarge . '" rel="' . $dirname . '" caption="' . $title . '" image="' . $filepath . '" data-artnr="' . substr($file,4,-4) . '">
+							<img src="' . $imgthumb . '" alt="" width="277" height="205" />
+							<div class="mask"><i class="' . $maskIcon . '"></i>' . makeHTMLStr( substr($dirname,2) ) . '<small>' . $head_iptc . '</small></div>
+						</a>
 					';
 						$index++;
 					}

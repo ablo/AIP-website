@@ -19,6 +19,12 @@
 					marginLeft: arrowXPos + "px"
 				});
 				$(".menuarrow").animate({bottom: "-20px",leaveTransforms: true},400);
+
+				/* Contact */
+				if ( id == "contact" ) {
+					$(".contactname").focus();
+				}
+				/* - */
 			}
 		});
 	}
