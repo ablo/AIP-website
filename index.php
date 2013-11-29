@@ -43,8 +43,6 @@
 <script type="text/javascript" src="libs/slidesjs/jquery.slides.min.js"></script>
 <!-- Simple Cart -->
 <script type="text/javascript" src="libs/simplecart/simpleCart.min.js"></script>
-<!-- Site JS -->
-<script src="ja.js" type="text/javascript"></script>
 
 </head>
 
@@ -90,7 +88,8 @@
 
 		</div>
 	</div>
-	<script type="text/javascript" src="ja_jquery.js"></script>
+	<!-- Site JS -->
+	<script type="text/javascript" src="js/ja.js"></script>
 
 	<!-- AddThis Smart Layers BEGIN -->
 	<!-- Go to http://www.addthis.com/get/smart-layers to customize -->
