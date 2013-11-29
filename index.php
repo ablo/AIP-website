@@ -80,7 +80,7 @@
 
 			<!-- Flickr feed -->
 
-			<?php include("flickr_carousel.php"); ?>
+			<?php include("flickr.php"); ?>
 
 			<!-- Social footer -->
 

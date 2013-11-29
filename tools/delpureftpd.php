@@ -6,7 +6,7 @@
 // Free to use and modify as long as you'll keep above info
 
 
-$directory = '.';
+$directory = '../';
 $deletedfiles = 0;
 $notdeletedfiles = 0;
 

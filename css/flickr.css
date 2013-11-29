@@ -14,7 +14,7 @@
 	user-select: none;
 }
 
-ul#carousel {
+ul#flickr {
 
 	height: 75px;
 
@@ -43,7 +43,7 @@ ul#carousel {
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', endColorstr='#000000',GradientType=0 ); /* IE6-8 */
 }
 
-ul#carousel li {
+ul#flickr li {
 
 	height:100%;
 	float:left;
@@ -52,7 +52,7 @@ ul#carousel li {
 }
 
 
-ul#carousel li.feed-lastitem {
+ul#flickr li.feed-lastitem {
 	display: block;
 
 	color: #fff;
@@ -65,7 +65,7 @@ ul#carousel li.feed-lastitem {
 	margin: 0 0 0 0;
 }
 
-ul#carousel li.feed-lastitem:hover {
+ul#flickr li.feed-lastitem:hover {
 	opacity: .95;
 	-webkit-backface-visibility: hidden;
 	transition: all .5s;
@@ -75,13 +75,13 @@ ul#carousel li.feed-lastitem:hover {
 }
 
 
-ul#carousel li.feed-lastitem a {
+ul#flickr li.feed-lastitem a {
 	text-decoration: none;
 	color: #fff;
 	font-weight: normal;
 }
 
-ul#carousel li.flickrdots {
+ul#flickr li.flickrdots {
 	width: 15px;
 	font-size: 40px;
 	line-height: 15px;
@@ -90,12 +90,12 @@ ul#carousel li.flickrdots {
 	padding-top: 20px;
 }
 
-ul#carousel li.flickrdots .d1 {
+ul#flickr li.flickrdots .d1 {
 	display: block;
 	color: #3993ff;
 }
 
-ul#carousel li.flickrdots .d2 {
+ul#flickr li.flickrdots .d2 {
 	display: block;
 	color: #ff1c92;
 }

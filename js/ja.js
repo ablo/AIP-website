@@ -1,45 +1,43 @@
 
-	/* Get viewport width and height */
+function openPage(id,xoffset,menutab) {
 
-	function openPage(id,xoffset,menutab) {
+	var c = "#gallerycontainer";
 
-		var c = "#gallerycontainer";
+	$("ul#menu li").removeClass("selected");
+	$("ul#menu li#" + id).addClass("selected");
 
-		$("ul#menu li").removeClass("selected");
-		$("ul#menu li#" + id).addClass("selected");
+	$("#pageslides").animate({left: "-" + xoffset + "px",leaveTransforms: true},400,function() {
 
-		$("#pageslides").animate({left: "-" + xoffset + "px",leaveTransforms: true},400,function() {
+		if ( menutab ) {
+			$("#pageslides .menuarrow").remove();
+			$("#" + id + "slide").append('<div class="menuarrow"><i id="' + id + 'arrow" class="fa fa-caret-up"></i></div>');
 
-			if ( menutab ) {
-				$("#pageslides .menuarrow").remove();
-				$("#" + id + "slide").append('<div class="menuarrow"><i id="' + id + 'arrow" class="fa fa-caret-up"></i></div>');
-
-				var arrowXPos = ($(menutab).offset().left - $("#menu").offset().left) + Math.ceil($(menutab).outerWidth()/2) - 12;
-				$("div.menuarrow i#" + id + "arrow").css({
-					marginLeft: arrowXPos + "px"
-				});
-				$(".menuarrow").animate({bottom: "-20px",leaveTransforms: true},400);
-
-				/* Contact */
-				if ( id == "contact" ) {
-					$(".contactname").focus();
-				}
-				/* - */
-			}
-		});
-	}
-
-	function sendMessage(f) {
-
-		$.post("/cgi-bin/FormMail.pl", $("#msgform").serialize())
-		.success(function() {
-			$("#mailstatus").fadeIn("fast",function() {
-				setTimeout(function() {
-					$(this).fadeOut();
-				},2000);
+			var arrowXPos = ($(menutab).offset().left - $("#menu").offset().left) + Math.ceil($(menutab).outerWidth()/2) - 12;
+			$("div.menuarrow i#" + id + "arrow").css({
+				marginLeft: arrowXPos + "px"
 			});
+			$(".menuarrow").animate({bottom: "-20px",leaveTransforms: true},400);
+
+			/* Contact */
+			if ( id == "contact" ) {
+				$(".contactname").focus();
+			}
+			/* - */
+		}
+	});
+}
+
+function sendMessage(f) {
+
+	$.post("/cgi-bin/FormMail.pl", $("#msgform").serialize())
+	.success(function() {
+		$("#mailstatus").fadeIn("fast",function() {
+			setTimeout(function() {
+				$(this).fadeOut();
+			},2000);
 		});
-	}
+	});
+}
 
 
 function enableShop() {
@@ -65,51 +63,49 @@ function enableShop() {
 }
 
 var carouselSettings = {
-		beforeLoad: function() {
-			this.title = $(this.element).attr('caption');
+	beforeLoad: function() {
+		this.title = $(this.element).attr('caption');
+	},
+	beforeShow: enableShop,
+	'speedIn'		:	600, 
+	'speedOut'		:	200,
+	'index'			: 	true,
+	'overlayShow'	:	true,
+	openEffect  : 'fade',
+	closeEffect : 'fade',
+	prevEffect : 'fade',
+	nextEffect : 'fade',
+	padding: 10,
+	closeBtn: false,
+	helpers	: {
+		overlay	: {
+			opacity : 1,
+			css : {
+				'background-color' : '#2D2E2F',
+				'background' : 'url(images/iosbg.jpg)'
+			}
 		},
-		beforeShow: enableShop,
-		'speedIn'		:	600, 
-		'speedOut'		:	200,
-		'index'			: 	true,
-		'overlayShow'	:	true,
-		openEffect  : 'fade',
-		closeEffect : 'fade',
-		prevEffect : 'fade',
-		nextEffect : 'fade',
-		padding: 10,
-		closeBtn: false,
-		helpers	: {
-			overlay	: {
-				opacity : 1,
-				css : {
-					'background-color' : '#2D2E2F',
-					'background' : 'url(images/iosbg.jpg)'
-				}
-			},
-			thumbs	: {
-				width	: 75,
-				height	: 75
-			},
-			titleFormat: function() {
-				return "Testing";
-			},
-			title : {
-				type : 'float' // 'float', 'inside', 'outside' or 'over'
-			},
-		}
+		thumbs	: {
+			width	: 75,
+			height	: 75
+		},
+		titleFormat: function() {
+			return "Testing";
+		},
+		title : {
+			type : 'float' // 'float', 'inside', 'outside' or 'over'
+		},
 	}
+}
 
 function initCarousel() {
 
-	$("#carousel").append("<li class='feed-lastitem'><a href='http://www.flickr.com/photos/johanabelson/'><i class='fa fa-external-link'></i></a></li>");
+	$("#flickr").append("<li class='feed-lastitem'><a href='http://www.flickr.com/photos/johanabelson/'><i class='fa fa-external-link'></i></a></li>");
 	$("#flickr_loading").remove();
-	$("#carousel").fadeIn();
+	$("#flickr").fadeIn();
 
 	$(".flickr_image").fancybox(carouselSettings);
 }
-
-
 
 $(document).ready(function() {
 
@@ -178,7 +174,7 @@ $(document).ready(function() {
 
 	/* Flickr feed */
 
-	$("ul#carousel").jflickrfeed({
+	$("ul#flickr").jflickrfeed({
 		limit: 10,
 		qstrings: {
 			id: "7496321@N04"
