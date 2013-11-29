@@ -1,4 +1,4 @@
-<div id="social">
+<div id="footer">
 	<!-- 	<h2 class='social'>Besök mig även på någon av följande sociala medier</h2> -->
 	<div class='tel'><i class='fa fa-phone'></i>&nbsp;0706-520992</div>
 	<div class='mail'>

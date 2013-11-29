@@ -47,7 +47,7 @@
 			$index = 0;
 			foreach($sortFiles as $file) {
 					$filepath = $albumdir . "/" . $file;
-					if ( filetype($filepath) == "file" && $file != "." && $file != ".." && $file != ".shop" ) {
+					if ( filetype($filepath) == "file" && substr($file, 0, 1) != '.' ) {
 // 						$imglarge = 'timthumb.php?src=' . urlencode($filepath) . '&amp;h=1200&amp;zc=1&amp;q=100';
 						$imglarge = $filepath; // DO I NEED timthumb HERE?
 						// Get IPTC description...
@@ -60,11 +60,26 @@
 						$imgthumb = 'gt/' . $dirname . '/' . $file;
 
 						$shopAlbumClass = "";
-						$maskIcon = "fa fa-camera";
+
 						if ( file_exists($albumdir . "/.shop") ) {
 							// If .shop exists we handle this as a shop album
 							$shopAlbumClass = " shop";
-							$maskIcon = "fa fa-shopping-cart";
+
+						}
+
+						$maskIcon = "fa fa-camera"; // Default
+						if ( file_exists($albumdir . "/.travel") ) {
+							$maskIcon = "fa fa-plane";
+						} else if ( file_exists($albumdir . "/.wedding") ) {
+							$maskIcon = "fa fa-heart";
+						} else if ( file_exists($albumdir . "/.portrait") ) {
+							$maskIcon = "fa fa-user";
+						} else if ( file_exists($albumdir . "/.assignment") ) {
+							$maskIcon = "fa fa-building-o";
+						} else if ( file_exists($albumdir . "/.archive") ) {
+							$maskIcon = "fa fa-picture-o";
+						} else if ( file_exists($albumdir . "/.panorama") ) {
+							$maskIcon = "fa fa-arrows-h";
 						}
 
 						echo '

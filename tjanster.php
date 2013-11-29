@@ -1,5 +1,5 @@
 
-	<div id="uppdrag" class="textContainerLeft box">
+	<div id="uppdrag" class="textBoxLeft box">
 		<h4>Marknadsför er med snygga bilder</h4>
 		<h2>Företag</h2>
 		<p>
@@ -8,7 +8,7 @@
 		</p>
 	</div>
 
-	<div id="studio" class="textContainerRight box">
+	<div id="studio" class="textBoxRight box">
 		<h4>I studion är det mesta möjligt</h4>
 		<h2>
 		Studio Omelette
@@ -22,7 +22,7 @@
 
 
 <!-- 
-	<div id="photoshop" class="textContainerLeft box">
+	<div id="photoshop" class="textBoxLeft box">
 		<h4>Förbättra dina bilder</h4>
 		<h2>Montage &amp; Retusch</h2>
 		<p>
@@ -32,23 +32,23 @@
 	</div>
  -->
 
-	<div id="portrait" class="textContainerLeft box">
+	<div id="portrait" class="textBoxLeft box">
 		<h4>En bild säger mer än tusen ord</h4>
 		<h2>
 		Porträtt
 		</h2>
 		<p>Porträtt tar jag gärna i studio, men även på annan plats om så önskas. Jag försöker alltid att lära känna personen innan fotograferingen, så att jag får en uppfattning om hur denne är som person. Personligheten vill jag fånga i bilden.</p>
-		<a id="portraitmore" href="#portraitinfo" class="showinfo plusbutton fa fa-question-circle"></a>
+		<div id="portraitmore" href="#portraitinfo" class="showinfo mask"><i class="fa fa-user"></i>...mer om porträtt<small>Vanliga frågor & svar</small></div>
 	</div>
 
-	<div id="wedding" class="textContainerRight box">
+	<div id="wedding" class="textBoxRight box">
 		<h4>Den viktigaste dagen i ert liv</h4>
 		<h2>
 		Bröllop
 		</h2>
 		<p>Bröllopet är kanske den viktigaste dagen i ert liv. Oavsett om det gäller fotografering under hela dagen eller endast fotografering av brudparet, så är jag alltid engagerad. Med ett gott humör har jag inga problem att locka fram ett skratt.
 		<!-- Att ha kul är otroligt viktig, det syns i bilderna. --></p>
-		<a id="weddingmore" href="#weddinginfo" class="showinfo plusbutton fa fa-question-circle"></a>
+		<div id="weddingmore" href="#weddinginfo" class="showinfo mask"><i class="fa fa-heart"></i>...mer om bröllop<small>Vanliga frågor & svar</small></div>
 	</div>
 
 	<div id="weddinginfo" class="infoContainer">

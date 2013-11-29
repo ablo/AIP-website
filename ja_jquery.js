@@ -1,39 +1,4 @@
 
-function enableSocial() {
-
-	if ( this.title == null ) {
-		this.title = "";
-	}
-
-// 	var fb_shareURL = encodeURIComponent("http://www.johanabelson.com/w2/showimage.php?img=" + $(this.element).attr("image"));			
-// 	var tw_shareURL = "http://www.johanabelson.com/w2/showimage.php?img=" + $(this.element).attr("image");
-	
-	// New line
-	this.title += '<div id="fancyshare">';
-// 
-// 	// Add FaceBook like button
-// 	this.title += '<li><iframe src="//www.facebook.com/plugins/like.php?href=' + fb_shareURL + '&amp;layout=button_count&amp;show_faces=true&amp;width=500&amp;action=like&amp;font&amp;colorscheme=light&amp;height=23" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:110px; height:23px;" allowTransparency="true"></iframe></li>';
-// 	
-// 	// Add tweet button
-// 	this.title += '<li><a href="https://twitter.com/share" class="twitter-share-button" data-url="' + tw_shareURL + '" data-via="johanabelson" data-lang="sv" data-hashtags="johanabelson">Tweeta</a></li>';
-// 
-// 	// Pinterest buttons
-// 
-// 	var pn_shareURL = encodeURIComponent("http://www.johanabelson.com/w2/showimage.php?img=" + $(this.element).attr("image"));
-// 	var pn_shareIMG = encodeURIComponent("http://www.johanabelson.com/w2/" + $(this.element).attr("image"));
-// 	
-// 	this.title += '<li><a href="http://pinterest.com/pin/create/button/?url=' + pn_shareURL + '&media=' + pn_shareIMG + '&description=Johan%20Abelson%20Photography" class="pin-it-button" count-layout="horizontal"><img border="0" src="//assets.pinterest.com/images/PinExt.png" title="Pin It" /></a></li>';
-// 
-// 	this.title += '<li><div class="g-plusone" data-size="medium"></div><script type="text/javascript"> window.___gcfg = {lang: "sv"};(function() {var po = document.createElement("script"); po.type = "text/javascript"; po.async = true;po.src = "https://apis.google.com/js/plusone.js";var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(po, s);})();</script></li>';
-
-	this.title += '</div>';
-
-	/* Disable right click */
-	$.fancybox.wrap.bind("contextmenu", function (e) {
-		return false; 
-	});
-}
-
 function enableShop() {
 
 // 		<h4 class="item_artnr">Art. 2966</h4>
@@ -51,9 +16,9 @@ function enableShop() {
 	this.title += '</div>';
 
 	/* Disable right click */
-// 	$.fancybox.wrap.bind("contextmenu", function (e) {
-// 		return false; 
-// 	});
+	$.fancybox.wrap.bind("contextmenu", function (e) {
+		return false; 
+	});
 }
 
 var carouselSettings = {
@@ -61,14 +26,6 @@ var carouselSettings = {
 			this.title = $(this.element).attr('caption');
 		},
 		beforeShow: enableShop,
-// 		beforeShow: enableSocial,
-//         afterShow: function() {
-// 
-//             // Render tweet button
-// //             twttr.widgets.load();
-// 			// Display social buttons
-// 			$("#fancyshare").delay(1000).fadeIn();
-//         },
 		'speedIn'		:	600, 
 		'speedOut'		:	200,
 		'index'			: 	true,
@@ -121,7 +78,7 @@ $(document).ready(function() {
 
     var floor = new Image();
 	floor.src = "images/floorbg.jpg";
-	floor.onload = function() { $("div#gallerycontainerbg").css("background-image", "url(" + floor.src + ")"); }
+	floor.onload = function() { $("div#pagecontainerbg").css("background-image", "url(" + floor.src + ")"); }
 
 	/* Slides */
 
@@ -197,7 +154,7 @@ $(document).ready(function() {
 // 		e.preventDefault();
 // 	});
 	$(".gallery_image").fancybox(carouselSettings);
-	$(".album").hover(function() {
+	$(".album, .box").hover(function() {
 		$(this).children(".gName").addClass("hover");
 		$(this).addClass("hover");
 // 		$(this).children(".mask").fadeIn("fast");
@@ -235,13 +192,6 @@ $(document).ready(function() {
 	$(".closeinfo").click(function() {
 		$.fancybox.close();
 	});
-
-// 	setTimeout(function() {
-// 		$("body").css("background-image", "url(" + bg.src + ")");  
-// 		$("#outerContainer").fadeIn(function() {
-// 			$(".loading").remove();
-// 		});
-// 	},3000);
 
 // 	$("#" + currentPage).click();
 

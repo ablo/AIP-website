@@ -15,7 +15,7 @@
 	</div>
 </div>
 
-<div id="tavlaprivat" class="textContainerLeft box">
+<div id="tavlaprivat" class="textBoxLeft box">
 	<h4>Tavla på väggen, ett minne för livet</h4>
 	<h2>Köp förstoringar</h2>
 	<p>
@@ -31,7 +31,7 @@
 	<a class="blackbutton" onclick="$('#gallery').click();">Titta på bilder och beställ</a>
 </div>
 
-<div id="tavlaforetag" class="textContainerRight box">
+<div id="tavlaforetag" class="textBoxRight box">
 	<h4>Mina bilder på ert företag</h4>
 	<h2>Jag fixar helheten</h2>
 	<p>
