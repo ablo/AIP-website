@@ -128,3 +128,7 @@ ul.contact li.tel {
 	width: 220px;
 	height: 460px;
 }
+
+a#studiomap {
+	text-decoration: none;
+}

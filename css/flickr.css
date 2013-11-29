@@ -99,3 +99,18 @@ ul#carousel li.flickrdots .d2 {
 	display: block;
 	color: #ff1c92;
 }
+
+/* Loading */
+
+#flickr_loading {
+	font-size: 1.6em;
+	font-weight: 100;
+	letter-spacing: 1px;
+	width: 200px;
+	height: 16px;
+	position: absolute;
+	left: 50%;
+	margin-left: -70px;
+	margin-top: 35px;
+	text-shadow: 1px 1px 1px rgba(0,0,0,.2);
+}
