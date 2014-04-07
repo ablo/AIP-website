@@ -18,20 +18,6 @@
 		Som privatperson kan du boka tid så tar vi snygga porträtt till dig själv eller din familj! Varför inte nya snygga profilbilder till Facebook!? <i class="fa fa-thumbs-up"></i></p>
 	</div>
 
-
-
-
-<!-- 
-	<div id="photoshop" class="textBoxLeft box">
-		<h4>Förbättra dina bilder</h4>
-		<h2>Montage &amp; Retusch</h2>
-		<p>
-		Har du en gammal bild som har fallit offer för tidens tand och behöver restaureras?
-		Jag har lång erfarenhet av retusch och bilbehandling. Kontakta mig så skall jag se vad jag kan göra åt din bild.
-		</p>
-	</div>
- -->
-
 	<div id="portrait" class="textBoxLeft box">
 		<h4>En bild säger mer än tusen ord</h4>
 		<h2>
@@ -51,7 +37,48 @@
 		<div id="weddingmore" href="#weddinginfo" class="showinfo mask"><i class="fa fa-heart"></i>...mer om bröllop<small>Vanliga frågor & svar</small></div>
 	</div>
 
-	<div id="weddinginfo" class="infoContainer">
+	<div style="red; height: 29px; width: 980px; float: left;"></div><!-- Spacer -->
+
+	<div class="textBoxLeft box">
+		<h4>Var är jag aktiv</h4>
+		<h2>Falköping & Skåne</h2>
+		<p>
+		Har du en gammal bild som har fallit offer för tidens tand och behöver restaureras?
+		Jag har lång erfarenhet av retusch och bilbehandling. Kontakta mig så skall jag se vad jag kan göra åt din bild.
+		</p>
+	</div>
+
+	<div class="textBoxRight box">
+		<h4>Förbättra dina bilder</h4>
+		<h2>Montage &amp; Retusch</h2>
+		<p>
+		Har du en gammal bild som har fallit offer för tidens tand och behöver restaureras?
+		Jag har lång erfarenhet av retusch och bilbehandling. Kontakta mig så skall jag se vad jag kan göra åt din bild.
+		</p>
+	</div>
+
+	<div class="textBoxLeft box">
+		<h4>Förbättra dina bilder</h4>
+		<h2>Montage &amp; Retusch</h2>
+		<p>
+		Har du en gammal bild som har fallit offer för tidens tand och behöver restaureras?
+		Jag har lång erfarenhet av retusch och bilbehandling. Kontakta mig så skall jag se vad jag kan göra åt din bild.
+		</p>
+	</div>
+
+	<div class="textBoxRight box">
+		<h4>Webbutveckling</h4>
+		<h2>Montage &amp; Retusch</h2>
+		<p>
+		Har du en gammal bild som har fallit offer för tidens tand och behöver restaureras?
+		Jag har lång erfarenhet av retusch och bilbehandling. Kontakta mig så skall jag se vad jag kan göra åt din bild.
+		</p>
+	</div>
+
+	<div id="page-more" class="yscroll-control" onclick="$('#tjansterslide').transition({y:-525});"><i class="fa fa-ellipsis-h"></i></div>
+	<div id="page-less" class="yscroll-control" onclick="$('#tjansterslide').transition({y:0});"><i class="fa fa-chevron-up"></i></div>
+
+	<div id="weddinginfo" class="infoContainer hidden">
 <!-- 		<h4>Bröllopsfotografering</h4> -->
 		<h2>
 		Bröllop - Vanliga frågor &amp; svar
@@ -116,7 +143,7 @@ De bilder ni som kund får på skiva får användas för privat bruk.
 		<button class="blackbutton closeinfo"><i class="fa fa-times-circle"></i>&nbsp;&nbsp;Stäng</button>
 	</div>
 
-	<div id="portraitinfo" class="infoContainer">
+	<div id="portraitinfo" class="infoContainer hidden">
 <!-- 		<h4>Porträttfotografering</h4> -->
 		<h2>
 		Porträtt - Vanliga frågor &amp; svar

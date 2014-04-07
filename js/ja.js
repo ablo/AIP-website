@@ -1,22 +1,29 @@
 
-function openPage(id,xoffset,menutab) {
+function openPage(id,idx,menutab) {
+
+	var pageWidht = $("#pagecontainer").width();
+	var offsetVal = (pageWidht * idx);
 
 	var c = "#gallerycontainer";
 
 	$("ul#menu li").removeClass("selected");
 	$("ul#menu li#" + id).addClass("selected");
 
-	$("#pageslides").animate({left: "-" + xoffset + "px",leaveTransforms: true},400,function() {
+	$(".menuarrow").transition({y: 0},400);
+
+	$("#pageslides").transition({x:"-" + offsetVal + "px", y: 0},1000,"snap",function() {
 
 		if ( menutab ) {
-			$("#pageslides .menuarrow").remove();
-			$("#" + id + "slide").append('<div class="menuarrow"><i id="' + id + 'arrow" class="fa fa-caret-up"></i></div>');
+// 			$("#pageslides .menuarrow").remove();
+// 			$("#" + id + "slide").append('<div class="menuarrow"><i id="' + id + 'arrow" class="fa fa-caret-up"></i></div>');
+// 			$("#menu .menuarrow").remove();
+// 			$("#menu").prepend('<li class="menuarrow"><i id="' + id + 'arrow" class="fa fa-caret-up"></i></div>');
 
 			var arrowXPos = ($(menutab).offset().left - $("#menu").offset().left) + Math.ceil($(menutab).outerWidth()/2) - 12;
-			$("div.menuarrow i#" + id + "arrow").css({
+			$(".menuarrow").css({
 				marginLeft: arrowXPos + "px"
 			});
-			$(".menuarrow").animate({bottom: "-20px",leaveTransforms: true},400);
+			$(".menuarrow").transition({y: "-17px"},200);
 
 			/* Contact */
 			if ( id == "contact" ) {
@@ -25,18 +32,49 @@ function openPage(id,xoffset,menutab) {
 			/* - */
 		}
 	});
+
+// 	$("#pageslides").animate({left: "-" + xoffset + "px",leaveTransforms: true},400,function() {
+// 
+// 		if ( menutab ) {
+// 			$("#pageslides .menuarrow").remove();
+// 			$("#" + id + "slide").append('<div class="menuarrow"><i id="' + id + 'arrow" class="fa fa-caret-up"></i></div>');
+// 
+// 			var arrowXPos = ($(menutab).offset().left - $("#menu").offset().left) + Math.ceil($(menutab).outerWidth()/2) - 12;
+// 			$("div.menuarrow i#" + id + "arrow").css({
+// 				marginLeft: arrowXPos + "px"
+// 			});
+// 			$(".menuarrow").animate({bottom: "-20px",leaveTransforms: true},400);
+// 
+// 			/* Contact */
+// 			if ( id == "contact" ) {
+// 				$(".contactname").focus();
+// 			}
+// 			/* - */
+// 		}
+// 	});
 }
 
-function sendMessage(f) {
+function sendMessage() {
 
-	$.post("/cgi-bin/FormMail.pl", $("#msgform").serialize())
-	.success(function() {
-		$("#mailstatus").fadeIn("fast",function() {
+	if ( $(".contactname").val() != "" && $(".contactemail").val() != "" && $(".contactmessage").val() != "" ) {
+
+		$.post("/cgi-bin/FormMail.pl", $("#msgform").serialize())
+		.success(function() {
+			$(".mailstatus.error").hide();
+			$(".mailstatus.success").fadeIn("fast",function() {
+				setTimeout(function() {
+					$(".mailstatus.success").fadeOut();
+				},2000);
+			});
+		});
+	} else {
+		$(".mailstatus.success").hide();
+		$(".mailstatus.error").fadeIn("fast",function() {
 			setTimeout(function() {
-				$(this).fadeOut();
+				$(".mailstatus.error").fadeOut();
 			},2000);
 		});
-	});
+	}
 }
 
 
@@ -49,17 +87,17 @@ function enableShop() {
 // 		<span class="price item_price">4900<span class="currency"> SEK</span></span>
 // 		<a href="javascript:;" class="blackbutton item_add"><i class="fa fa-shopping-cart"></i>&nbsp;&nbsp;Lägg i kundvagn</a>
 
-	this.title += '<div id="fancybuy" class="simpleCart_shelfItem">';
-	this.title += '		(artnr.<small class="item_artnr">' + $(this.element).data("artnr") + '</small>)';
-	this.title += '		<span class="item_name" style="display: none;">' + $(this.element).attr("caption") + '</span>';
-	this.title += '		<span class="price item_price">995<span class="currency"> SEK</span></span>';
-	this.title += '		<a href="javascript:;" class="blackbutton item_add"><i class="fa fa-shopping-cart"></i>&nbsp;&nbsp;Köp förstoring</a>';
-	this.title += '</div>';
+// 	this.title += '<div id="fancybuy" class="simpleCart_shelfItem" style="float: right;">';
+// 	this.title += '	<small style="display: none;">artnr.<span class="item_artnr">' + $(this.element).data("artnr") + '</span></small>';
+// 	this.title += '	<span class="item_name" style="display: none;">' + $(this.element).attr("caption") + '</span>';
+// 	this.title += '	<span class="price item_price">995<span class="currency"> SEK</span></span>';
+// 	this.title += '	<a href="javascript:;" style="position: absolute; right: 0; bottom: 0;" class="blackbutton icon item_add"><i class="fa fa-shopping-cart"></i></a>';
+// 	this.title += '</div>';
 
 	/* Disable right click */
-	$.fancybox.wrap.bind("contextmenu", function (e) {
-		return false; 
-	});
+// 	$.fancybox.wrap.bind("contextmenu", function (e) {
+// 		return false; 
+// 	});
 }
 
 var carouselSettings = {
@@ -85,6 +123,8 @@ var carouselSettings = {
 				'background' : 'url(images/iosbg.jpg)'
 			}
 		},
+// 		buttons	: { tpl: '<div id="fancybox-buttons"><ul style="width:132px"><li><a class="btnPrev" title="Previous" href="javascript:;"></a></li><li><a class="btnPlay" title="Start slideshow" href="javascript:;"></a></li><li><a class="btnNext" title="Next" href="javascript:;"></a></li><li><a class="btnClose" title="Close" href="javascript:jQuery.fancybox.close();"></a></li></ul></div>' },
+		buttons	: { tpl: '<div id="fancybox-buttons" class="top simpleCart_shelfItem"><ul style="width: 240px;"><li><a class="btnPrev" title="Previous" href="javascript:;"></a></li><li><a class="btnPlay" title="Start slideshow" href="javascript:;"></a></li><li><a class="btnNext" title="Next" href="javascript:;"></a></li><!--<li><a class="btnToggle" title="Toggle size" href="javascript:;"></a></li>--><li><a href="javascript:;" class="item_add helper-button-override"><i class="fa fa-shopping-cart"></i> <span class="price item_price">795<span class="currency"> SEK</span></span></a></li><li><a class="btnClose" title="Close" href="javascript:;"></a></li></ul></div>' },
 		thumbs	: {
 			width	: 75,
 			height	: 75
@@ -259,7 +299,6 @@ $(document).ready(function() {
 	}, function() {
 		$(".cartlist").slideUp(100);
 	});
-
 });
 
 $(document).keydown(function(e){

@@ -2,8 +2,8 @@ RewriteEngine On
 
 RewriteRule ^favicon\.ico$ /images/favicon.ico [L]
 RewriteRule ^s/([^/]+)$ timthumb.php?src=gallery/_SLIDE/$1&w=980&h=525&zc=1&q=100&a=c
-RewriteRule ^gt/([^/]+)/([^/]+)$ timthumb.php?src=/gallery/$1/$2&w=277&h=205&zc=1&q=100
-RewriteRule ^lightbox/([^/]+)/([^/]+)$ /showimage.php?img=gallery/$1/$2
+RewriteRule ^gt/([^/]+)/([^/]+)$ timthumb.php?src=gallery/$1/$2&w=277&h=205&zc=1&q=100
+RewriteRule ^lightbox/([^/]+)/([^/]+)$ showimage.php?img=gallery/$1/$2
 header add "disablevcache" "true"
 
 # compress text, html, javascript, css:

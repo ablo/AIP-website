@@ -64,8 +64,6 @@
 </div>
  -->
 
-<div class="menuarrow"><i id="tavlaarrow" class="fa fa-caret-up"></i></div>
-
 <script type="text/javascript">
 
 	$(document).ready(function() {

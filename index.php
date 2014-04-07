@@ -6,6 +6,8 @@
 <meta name="keywords" content="Johan Abelson, fotograf, Falköping, ateljé, studio, bröllop, porträtt, produktfotografering, reportage, event" />
 <meta name="description" content="Ateljé i centrala Falköping. Bröllop, Produkt, Porträtt, Mode m.m." />
 <meta http-equiv="cache-control" content="no-cache" />
+<meta name="author" content="Johan Abelson">
+
 
 <title>Johan Abelson Photography</title>
 
@@ -13,29 +15,23 @@
 
 <!-- Site CSS -->
 <link href="css/base.css" rel="stylesheet" type="text/css" />
-<link href="css/header.css" rel="stylesheet" type="text/css" />
-<link href="css/slides.css" rel="stylesheet" type="text/css" />
-<link href="css/menu.css" rel="stylesheet" type="text/css" />
-<link href="css/flickr.css" rel="stylesheet" type="text/css" />
-<link href="css/gallery.css" rel="stylesheet" type="text/css" />
-<link href="css/contact.css" rel="stylesheet" type="text/css" />
-<link href="css/footer.css" rel="stylesheet" type="text/css" />
-<link href="css/cart.css" rel="stylesheet" type="text/css" />
-<!-- <link href="css/prints.css" rel="stylesheet" type="text/css" /> -->
 
 <link rel="stylesheet" href="libs/fancybox2/jquery.fancybox.css" media="screen" />
 <link rel="stylesheet" href="libs/fancybox2/helpers/jquery.fancybox-thumbs.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="libs/fancybox2/helpers/jquery.fancybox-buttons.css" type="text/css" media="screen" />
 <link rel="stylesheet" type="text/css" href="libs/fontawesome/css/font-awesome.css" />
 
 <!-- JQuery -->
 <!-- <script src="libs/jquery/jquery.min.js" type="text/javascript"></script> -->
 <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 <!-- jquery.animate-enhanced plugin -->
-<script src="libs/jquery/jquery.animate-enhanced.min.js" type="text/javascript"></script>
+<!-- <script src="libs/jquery/jquery.animate-enhanced.min.js" type="text/javascript"></script> -->
+<!-- Transit -->
+<script src="libs/jquery/jquery.transit.min.js" type="text/javascript"></script>
 <!-- Fancybox -->
 <script type="text/javascript" src="libs/fancybox2/jquery.fancybox.pack.js"></script>
 <!-- Optionally add button and/or thumbnail helpers -->
-<!-- <script type="text/javascript" src="fancybox2/helpers/jquery.fancybox-buttons.js"></script> -->
+<script type="text/javascript" src="libs/fancybox2/helpers/jquery.fancybox-buttons.js"></script>
 <script type="text/javascript" src="libs/fancybox2/helpers/jquery.fancybox-thumbs.js"></script>
 <!-- jflickrfeed -->
 <script type="text/javascript" src="libs/jflickrfeed/jflickrfeed.min.js"></script>
@@ -43,7 +39,6 @@
 <script type="text/javascript" src="libs/slidesjs/jquery.slides.min.js"></script>
 <!-- Simple Cart -->
 <script type="text/javascript" src="libs/simplecart/simpleCart.min.js"></script>
-
 </head>
 
 <body class="ja">
@@ -104,7 +99,6 @@
 		  'numPreferredServices' : 5
 		}
 	  });
-
 	</script>
 	<!-- AddThis Smart Layers END -->
 
